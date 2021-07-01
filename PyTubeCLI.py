@@ -1,8 +1,6 @@
-import pytube
 from pytube import YouTube
 from pytube.cli import on_progress
-import pycolors
-from pycolors import fore, back, style, init
+from pycolors import fore, style, init
 import os
 
 init.init()
@@ -34,7 +32,10 @@ def main():
                 yt.streams.filter(only_audio=True, subtype='mp4').first().download(filename=f"AUDIO {yt.title}",
                                                                                    output_path=path)
         except Exception as e:
-            print(f"{fore.RED}Error!{style.RESET} {e}")
+            print(f"\n{fore.RED}Error!{style.RESET} {e}\n")
+            input("Press return to continue")
+            clearScreen()
+            start()
     else:
         print(f"{fore.RED}Error! {style.RESET}{choose} {fore.RED}is not a valid input{style.RESET}")
         print('Valid inputs: ' + ', '.join(format))
@@ -80,6 +81,7 @@ def start():
             print(f"- {fore.CYAN}pytube{style.RESET}: YouTube video downloader")
             print(f"- {fore.CYAN}os{style.RESET}: Interact with os\n")
             print(f"{fore.CYAN}Please give credits if you will use the code{style.RESET}\n")
+            print(f"Repo: {fore.CYAN}https://github.com/gioggino/pytubedownloader{style.RESET}\n")
             input("Press return to continue")
             start()
         if option == "4":
@@ -89,8 +91,3 @@ def start():
         print('Valid inputs: ' + ', '.join(section))
 
 start()
-
-    #print(f"\n{Fore.GREEN}Title:{Style.RESET_ALL} {yt.title}\n{Fore.GREEN}Author:{Style.RESET_ALL} {yt.author}\n{Fore.GREEN}Views:{Style.RESET_ALL} {yt.views}\n{Fore.GREEN}Publish Date:{Style.RESET_ALL} {yt.publish_date}\n{Fore.GREEN}ID:{Style.RESET_ALL} {yt.video_id}\n{Fore.GREEN}Thumbnail:{Style.RESET_ALL} {yt.thumbnail_url}\n{Fore.GREEN}Description:{Style.RESET_ALL} {yt.description}{Style.RESET_ALL}\n")
-
-#finally:
-    #print(f"{fore.YELLOW}Exiting the software...{style.RESET}")
