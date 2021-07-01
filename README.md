@@ -4,11 +4,11 @@ Simple and lightweight YouTube video downloader
 
 ### Index
 
-- [Installation](https://github.com/gioggino/pytubedownloader/blob/main/README.md#Installation)
-- [Usage](https://github.com/gioggino/pytubedownloader/blob/main/README.md#Usage)
-- [Documentation](https://github.com/gioggino/pytubedownloader/blob/main/README.md#Documentation)
-- [Contributing](https://github.com/gioggino/pytubedownloader/blob/main/README.md#Contributing)
-- [License](https://github.com/gioggino/pytubedownloader/blob/main/README.md#License)
+- [Installation](https://github.com/gioggino/pytubedownloader/blob/master/README.md#Installation)
+- [Usage](https://github.com/gioggino/pytubedownloader/blob/master/README.md#Usage)
+- [Documentation](https://github.com/gioggino/pytubedownloader/blob/master/README.md#Documentation)
+- [Contributing](https://github.com/gioggino/pytubedownloader/blob/master/README.md#Contributing)
+- [License](https://github.com/gioggino/pytubedownloader/blob/master/README.md#License)
 
 ## Installation
 
@@ -32,4 +32,4 @@ Please report any issues [here](https://github.com/gioggino/pytubedownloader/iss
 
 PyTubeDownloader is distributed under the [MIT](https://choosealicense.com/licenses/mit/) License
 
-project's license can be found [here](https://github.com/gioggino/pytubedownloader/blob/main/LICENSE)
+project's license can be found [here](https://github.com/gioggino/pytubedownloader/blob/master/LICENSE)
