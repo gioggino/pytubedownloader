@@ -10,10 +10,10 @@ clearScreen = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 # Main code function
 def main():
     url = input(f"\nInsert the url: ")
-    path = input(f"Choose the file path: ")
+    path = input(f"\nChoose the file path: ")
     print("")
     format = ["video", "audio", "both"]
-    print("What do you want to download?\nOptions: Video, Audio, Both")
+    print(f"What do you want to download?\nOptions: {fore.CYAN}Video{style.RESET}, {fore.CYAN}Audio{style.RESET}, {fore.CYAN}Both{style.RESET}")
     choose = input(f"Choose: ").lower()
 
     if choose in format:
@@ -22,15 +22,19 @@ def main():
             print(f"\nDownloading {choose}\n")
             if choose == "video":
                 yt.streams.filter(progressive=True, subtype='mp4').get_highest_resolution().download(
-                    filename=f"VIDEO {yt.title}", output_path=path)
+                    filename=f"VIDEO {yt.title}.mp4", output_path=path)
             elif choose == "audio":
-                yt.streams.filter(only_audio=True, subtype='mp4').first().download(filename=f"AUDIO {yt.title}",
+                yt.streams.filter(only_audio=True, subtype='mp4').first().download(filename=f"AUDIO {yt.title}.mp4",
                                                                                    output_path=path)
             elif choose == "both":
                 yt.streams.filter(progressive=True, subtype='mp4').get_highest_resolution().download(
-                    filename=f"VIDEO {yt.title}", output_path=path)
-                yt.streams.filter(only_audio=True, subtype='mp4').first().download(filename=f"AUDIO {yt.title}",
+                    filename=f"VIDEO {yt.title}.mp4", output_path=path)
+                yt.streams.filter(only_audio=True, subtype='mp4').first().download(filename=f"AUDIO {yt.title}.mp4",
                                                                                    output_path=path)
+            clearScreen()
+            logo()
+            print("Download completed!\n")
+            print(f"{fore.CYAN}Title:{style.RESET} {yt.title}\n{fore.CYAN}Channel:{style.RESET} {yt.author}\n{fore.CYAN}Views:{style.RESET} {yt.views}\n{fore.CYAN}Publish Date:{style.RESET} {yt.publish_date}")
         except Exception as e:
             print(f"\n{fore.RED}Error!{style.RESET} {e}\n")
             input("Press return to continue")
@@ -73,7 +77,7 @@ def start():
             clearScreen()
             logo()
             print(f"Made by: {fore.CYAN}onlygiogi{style.RESET}")
-            print(f"- GitHub: {fore.CYAN}gioggino{style.RESET}")
+            print(f"- GitHub: {fore.CYAN}onlygiogi{style.RESET}")
             print(f"- Discord: {fore.CYAN}onlygiogi#6477{style.RESET}")
             print(f"- Telegram: {fore.CYAN}@onlygiogi{style.RESET}")
             print(f"\nLibraries used:")
